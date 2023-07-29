@@ -1,16 +1,11 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+import phonenumbers
+from phonenumbers import timezone, geocoder, carrier
+number = input("enter the number: ")
+phone = phonenumbers.parse(number)
+time = timezone.time_zones_for_number(phone)
+car = carrier.name_for_number(phone, "en")
+reg = geocoder.description_for_number(phone, "en")
+print(phone)
+print(time)
+print(car)
+print(reg)
